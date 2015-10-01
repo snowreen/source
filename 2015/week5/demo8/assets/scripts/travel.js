@@ -11,20 +11,34 @@ function travelNotes() {
     //conditional check for input field
     if ($note_text.val() !== "") {
     //set content for note
-    $note.html($note_text.val());
-    //hide new note to setup fadeIn...
-    $note.hide();
-    //append note text to note-output
-    $(".note-output").append($note);
-    //fadeIn hidden new note
-    $note.fadeIn("slow");
-    $note_text.val("");
+      $note.html($note_text.val());
+      var $del = $("<button>delete</button>");
+      $note.append($del);
+      //hide new note to setup fadeIn...
+      $note.hide();
+      //append note text to note-output
+      $(".note-output").append($note);
+      //fadeIn hidden new note
+      $note.fadeIn("slow");
+      $note_text.val("");
     }
   }
 
+  function deleteAll() {
+  }
+
   //handle user event for `add` button click
-  $(".note-input button").on("click", function(e) {
+  $(".note-input #add").on("click", function(e) {
     createNote();
+  });
+
+  $(".note-input #delete").on("click", function(e) {
+    $(".note-output").empty();
+  });
+
+  $(".note-output").on("click", "p button" , function(e) {
+    $(this).parent().remove();
+    //$(this).remove();
   });
 
   //handle user event for keyboard press

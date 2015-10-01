@@ -41,13 +41,32 @@ main {
   cursor: pointer;
 }
 /* even note paragraph output */
-.note-output p:nth-child(even) {
+/*.note-output p:nth-child(even) {
   background-color: #ccc;
-}
+}*/
 /* odd note paragraph output */
-.note-output p:nth-child(odd) {
+/*.note-output p:nth-child(odd) {
   background-color: #eee;
+}*/
+
+.note-output p {
+  width: 80%;
 }
+
+.note-output p button {
+  float: right;
+}
+
+/*
+The below css code will be repeated after every 5th child
+*/
+.note-output p:nth-child(5n+1) {    background: #FF9999; }
+.note-output p:nth-child(5n+2) {    background: #ADADFF; }
+.note-output p:nth-child(5n+3) {    background: #B2FFB2; }
+.note-output p:nth-child(5n+4) {    background: #C6AAFF; }
+.note-output p:nth-child(5n+5) {    background: #66C2E0; }
+
+
 /* site footer */
 footer {
   margin-top: 5px;
